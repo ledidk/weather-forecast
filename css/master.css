@@ -3,29 +3,31 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: auto;
-    color: black;
+    color: #333;
     background-image: url(../images/world.jpg);
-    background-size: cover; /* Ensure the background image covers the entire page */
+    background-size: cover;
 }
 
 .main {
     width: 100%;
-    height: 70%; /* Limit the main div to 70% of the viewport height */
-    display: flex;
-    flex-direction: column; /* Arrange children vertically */
-    justify-content: space-between; /* Distribute space between children */
+    height: 70vh;
+    position: absolute; 
+    bottom: 0; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
     text-align: center;
     background-color: rgba(7, 97, 207, 0.3);
-    margin-top: 15%;
+    margin-top: auto;
     border-top: 10px solid  rgba(7, 97, 207, 0.026);
     box-sizing: border-box;
 }
 
 .container {
-    flex: 1; /* Allow this div to grow and fill available space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between contents and footer */
+    justify-content: space-between; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -33,7 +35,7 @@ html, body {
 }
 
 .contents {
-    flex: 1; /* Allow contents to grow within the container */
+    flex: 1; 
     align-items: center;
     justify-content: center;
 }
@@ -41,7 +43,7 @@ html, body {
 .contents h1 {
     font-size: 40px;
     color: #ffff00;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
     margin-top: 0; 
 }
 
@@ -51,25 +53,35 @@ select{
     text-align: center;
     font-size: 16px;
     border: none;
-    margin-top: 2em;
+    margin-top: 1em;
     height: 28px;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
 }
 
 .flex-container {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 7%;
-    grid-template-columns: repeat(7, 1fr);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex: 1; 
-    border-radius: 20px;
 }
 
+.flex-container > div {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.forecast{
+    border-radius: 20px;
+    text-shadow: #333;
+    background-color: rgba(255, 255, 255, 0.049);
+}
 .flex-container h4{
     color: #ffff00;
     font-size: 14px;
@@ -80,16 +92,6 @@ select{
 .flex-container p{
     color: whitesmoke;
     font-size: 14px;
-    text-shadow: #333;
-
-}
-
-.flex-container > div {
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.049);
-    border: 1px solid  rgba(255, 255, 255, 0.049);
-    margin: 10px;
-    text-align: center;
 }
 
 footer {
@@ -97,4 +99,110 @@ footer {
     color: rgb(181, 174, 174);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
+}
+
+/* Keyframes for the spinning animation */
+
+.loader-wrapper{
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    border: 10px solid #f3f3f3; 
+    border-top: 10px solid #3498dbda; 
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px; 
+    animation: spin 2s linear infinite;
+}
+
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+
+/* small screen */ 
+@media (max-width: 768px) {
+    .main {
+        height: auto; 
+        position: relative; 
+        bottom: 0; 
+    }
+
+    .container {
+        padding: 10px; 
+        margin: 0 10px; 
+    }
+
+    .contents h1 {
+        font-size: 28px; 
+    }
+
+    select {
+        width: 60%; 
+        font-size: 14px; 
+    }
+
+    .flex-container {
+        display: grid;
+        grid-template-columns: 1fr; 
+        margin-left: 5%; 
+        margin-right: 5%;
+        margin-bottom: 5%;
+        align-items: center;
+    }
+
+    .flex-container > div {
+        margin: 5px 0; 
+        padding: 5px; 
+    }
+
+    .flex-container h4, .flex-container p {
+        font-size: 12px; 
+    }
+
+    footer {
+        padding: 5px 0; 
+        font-size: 12px;
+    } 
+}
+
+@media (max-width: 480px) {
+    .contents h1 {
+        font-size: 24px; 
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    select {
+        font-size: 12px; 
+        height: 24px; 
+    }
+
+    .flex-container {
+        margin-left: 2%; 
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+
+    .flex-container > div {
+        margin: 3px 0; 
+        padding: 3px; 
+    }
+
+    footer {
+        font-size: 10px; 
+        padding: 3px 0; 
+    }
 }
