@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     color: black;
     background-image: url(../images/world.jpg);
     background-size: cover; /* Ensure the background image covers the entire page */
