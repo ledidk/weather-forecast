@@ -23,84 +23,33 @@
             </div>
         </div>
 
-        <div class="loader-wrapper">
+        <div class="loader-wrapper"  style="display:none;">
             <div class="loader"></div>
         </div>
-        <div class="weather-forecast">
+
+        <div class="weather-forecast" style="display:none;">
             
             <div class="flex-container">
                 <div class="flex-container">
                     <div class="forecast">
-                        <h4> Mon Sept 02</h4>
+                        <h4 class="date"> Mon Sept 02</h4>
                         <div class="weather-image">
                             <img src="images/lightrain.png" alt="">
                         </div>
                         <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>15 °C</p>
-                            <p>Low: <span class="low"> </span>14 °C</p>
+                            <h3 class="precipitation">Rain</h3>
+                            <p><span class="clouds"> </span>Very cloudy</p>
+                            <p>Temperature: <span class="temperature"> </span>15 °C</p>
                         </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Tue Sept 03</h4>
-                        <div class="weather-image">
-                            <img src="images/rain.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>15°C</p>
-                            <p>Low: <span class="low"> </span>14°C</p>
-                        </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Wed Sept 04</h4>
-                        <div class="weather-image">
-                            <img src="images/humid.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>18 °C</p>
-                            <p>Low: <span class="low"> </span>14 °C</p>
-                        </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Thu Sept 05</h4>
-                        <div class="weather-image">
-                            <img src="images/cloudy.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>18 °C</p>
-                            <p>Low: <span class="low"> </span>14 °C</p>
-                        </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Fri Sept 06</h4>
-                        <div class="weather-image">
-                            <img src="images/pcloudy.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>22 °C</p>
-                            <p>Low: <span class="low"> </span>13 °C</p>
-                        </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Sat Sept 07</h4>
-                        <div class="weather-image">
-                            <img src="images/cloudy.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>24 °C</p>
-                            <p>Low: <span class="low"> </span>14 °C</p>
-                        </div>
-                    </div>
-                    <div class="forecast">
-                        <h4> Sun Sept 08</h4>
-                        <div class="weather-image">
-                            <img src="images/pcloudy.png" alt="">
-                        </div>
-                        <div class="weather-forecast-data">
-                            <p>High: <span class="high"> </span>27 °C</p>
-                            <p>Low: <span class="low"> </span>15 °C</p>
-                        </div>
+
+                        <!-- more days  -->
+
+
                     </div>
             </div>
+        </div>
+        <div class="message-container" id="message-container" style="display:none;">
+            <!-- Error or status messages will be injected here -->
         </div>
         <!-- Footer -->
         <footer>

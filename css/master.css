@@ -8,6 +8,18 @@ html, body {
     background-size: cover;
 }
 
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 97, 207, 0.3); 
+    z-index: -1; 
+}
+
 .main {
     width: 100%;
     height: 70vh;
@@ -17,7 +29,6 @@ html, body {
     flex-direction: column; 
     justify-content: space-between;
     text-align: center;
-    background-color: rgba(7, 97, 207, 0.3);
     margin-top: auto;
     border-top: 10px solid  rgba(7, 97, 207, 0.026);
     box-sizing: border-box;
@@ -89,6 +100,13 @@ select{
 
 }
 
+.flex-container h3{
+    color: #b7ff00;
+    font-size: 14px;
+    text-shadow: #333;
+
+}
+
 .flex-container p{
     color: whitesmoke;
     font-size: 14px;
@@ -104,9 +122,16 @@ footer {
 /* Keyframes for the spinning animation */
 
 .loader-wrapper{
-    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
+.message-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

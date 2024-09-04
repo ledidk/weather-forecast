@@ -22,25 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.getElementById('options').addEventListener('change', function() {
     const selectedData = this.value ? JSON.parse(this.value) : null;
-
+    showLoader();
     if (selectedData) {
         const latitude = selectedData.lat;
         const longitude = selectedData.lon;
-
-        // Show the loader
-        showLoader();
-
-        // Start a timeout for error handling
-        const timeoutId = setTimeout(() => {
-            hideLoader();
-            showMessage('No data available or an error occurred. Please try again later.');
-        }, 60000); // 1 minute
-
         // Use latitude and longitude to fetch weather data
         fetchWeatherData(latitude, longitude);
     } else {
         // Clear weather data if no city is selected
+        showMessage('No data available or an error occurred. Please try again later.');
         clearWeatherData();
+        const timeoutId = setTimeout(() => {
+            hideLoader();
+            showMessage('No data available or an error occurred. Please try again later.');
+        }, 60000); // 1 minute
     }
 });
 
@@ -115,6 +110,19 @@ function displayWeatherData(data) {
         console.error('No weather data available');
         return;
     }
+
+    // Get current date and time
+    const now = new Date();
+    const currentDay = now.getDate(); // Day of the month
+    const currentHour = now.getHours(); // Current hour
+    // Log the city and country
+    console.log(`Selected City: ${city}`);
+    console.log(`Selected Country: ${country}`);
+    // Log the entire data object for reference
+    console.log('Displaying Weather Data:', data);
+
+
+    
 
     const forecastContainer = document.querySelector('.flex-container');
     forecastContainer.innerHTML = ''; // Clear existing forecasts
