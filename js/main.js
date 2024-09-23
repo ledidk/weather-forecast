@@ -31,7 +31,7 @@ document.getElementById('options').addEventListener('change', function () {
 });
 
 function fetchWeatherData(lat, lon) {
-    const apiUrl = `http://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=meteo&output=json`;
+    const apiUrl = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=meteo&output=json`;
 
     fetch(apiUrl)
         .then(response => response.json())
